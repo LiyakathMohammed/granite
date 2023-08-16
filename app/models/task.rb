@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Task < ApplicationRecord
   MAX_TITLE_LENGTH = 125
   VALID_TITLE_REGEX = /\A.*[a-zA-Z0-9].*\z/i
