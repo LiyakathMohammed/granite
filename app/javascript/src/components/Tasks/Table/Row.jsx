@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import Tooltip from "components/Tooltip";
 
-const Row = ({ data, showTask, destroyTask }) => (
+const Row = ({ data, destroyTask, showTask }) => (
   <tbody className="bg-white divide-y divide-gray-200">
     {data.map(rowData => (
       <tr key={rowData.id}>
@@ -15,6 +15,12 @@ const Row = ({ data, showTask, destroyTask }) => (
           <Tooltip content={rowData.title} delay={200} direction="top">
             <div className="truncate max-w-64 ">{rowData.title}</div>
           </Tooltip>
+        </td>
+        <td
+          className="px-6 py-4 text-sm font-medium
+            leading-5 text-gray-900 whitespace-no-wrap"
+        >
+          {rowData.assigned_user_id}
         </td>
         <td className="px-6 py-4 text-sm font-medium leading-5 text-right cursor-pointer">
           <a className="text-bb-purple" onClick={() => showTask(rowData.slug)}>
@@ -40,6 +46,7 @@ const Row = ({ data, showTask, destroyTask }) => (
 
 Row.propTypes = {
   data: PropTypes.array.isRequired,
+  destroyTask: PropTypes.func,
   showTask: PropTypes.func,
 };
 
