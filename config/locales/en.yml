@@ -31,8 +31,8 @@
 
 en:
   generic_error: "Something went wrong. Please try again later."
-  successfully_created: "Task was successfully created!"
-  successfully_updated: "Task was successfully updated!"
+  successfully_created: "%{entity} was successfully created!"
+  successfully_updated: "%{entity} was successfully updated!"
   task:
     slug:
       immutable: "is immutable!"
