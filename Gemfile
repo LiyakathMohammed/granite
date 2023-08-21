@@ -26,6 +26,8 @@ gem "react-rails", "~> 2.7.1"
 
 gem "bcrypt", "~> 3.1.13"
 
+gem "simplecov", require: false, group: :test
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -44,6 +46,7 @@ gem "bootsnap", require: false
 # For compiling and bundling JavaScript. Read more: https://github.com/shakacode/shakapacker
 gem "shakapacker", "~> 6.6.0"
 
+gem "pundit"
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -55,6 +58,12 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
+
+  # Rails integration for factory_bot, a replacement for fixtures
+  gem "factory_bot_rails"
+
+  # For auto-generating demo data
+  gem "faker"
 end
 
 group :development do

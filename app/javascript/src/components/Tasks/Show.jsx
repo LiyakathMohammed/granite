@@ -43,15 +43,19 @@ const Show = () => {
       <h1 className="pb-3 pl-3 mt-3 mb-3 text-lg leading-5 text-gray-800 border-b border-gray-500">
         <span className="text-gray-600">Task Title : </span> {task?.title}
       </h1>
+      <h2 className="pb-3 pl-3 mt-3 mb-3 text-lg leading-5 text-gray-800 border-b border-gray-500">
+        <span className="text-gray-600">Assigned To : </span>
+        {task?.assigned_user.name}
+      </h2>
       <div className="bg-bb-env px-2 mt-2 mb-4 rounded">
         <i
           className="text-2xl text-center transition cursor-pointer duration-300ease-in-out ri-edit-line hover:text-bb-yellow"
           onClick={updateTask}
         />
       </div>
-      <h2 className="pb-3 pl-3 mt-3 mb-3 text-lg leading-5 text-gray-800 border-b border-gray-500">
-        <span className="text-gray-600">Assigned To : </span>
-        {task?.assigned_user.name}
+      <h2 className="pb-3 mb-3 text-md leading-5 text-bb-gray-600 text-opacity-50">
+        <span>Created By : </span>
+        {task?.task_owner?.name}
       </h2>
     </Container>
   );
