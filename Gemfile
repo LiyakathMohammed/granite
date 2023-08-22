@@ -50,6 +50,8 @@ gem "pundit"
 
 gem "minitest-bisect"
 
+gem "sidekiq", "<7"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
