@@ -2,6 +2,8 @@
 
 def enable_test_coverage
   require "simplecov"
+  Dir[Rails.root.join("test/support/**/*.rb")].each { |f| require f }
+
   SimpleCov.start do
     add_filter "/test/"
     add_group "Models", "app/models"
