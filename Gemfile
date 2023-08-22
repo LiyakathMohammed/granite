@@ -47,6 +47,9 @@ gem "bootsnap", require: false
 gem "shakapacker", "~> 6.6.0"
 
 gem "pundit"
+
+gem "minitest-bisect"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
