@@ -12,7 +12,6 @@ jobs:
       - image: cimg/postgres:9.6
         environment:
           POSTGRES_HOST_AUTH_METHOD: trust
-
     #application directory change it with your application directory name
     working_directory: ~/granite
     environment:
@@ -27,6 +26,7 @@ jobs:
           node-version: "18.12"
       - run: node --version
       - run: gem install bundler:2.2.20
+      - run: sudo apt update && sudo apt install postgresql-client
       #install sqlite dependency
       - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
       # Bundle install
