@@ -3,20 +3,19 @@
 class Task < ApplicationRecord
   MAX_TITLE_LENGTH = 125
   VALID_TITLE_REGEX = /\A.*[a-zA-Z0-9].*\z/i
-
   RESTRICTED_ATTRIBUTES = %i[title task_owner_id assigned_user_id]
   enum :progress, { pending: "pending", completed: "completed" }, default: :pending
   enum :status, { unstarred: "unstarred", starred: "starred" }, default: :unstarred
+
   belongs_to :task_owner, foreign_key: "task_owner_id", class_name: "User"
   belongs_to :assigned_user, foreign_key: "assigned_user_id", class_name: "User"
   has_many :comments, dependent: :destroy
+
   validates :title,
     presence: true,
     length: { maximum: MAX_TITLE_LENGTH },
     format: { with: VALID_TITLE_REGEX }
-
   validates :slug, uniqueness: true
-
   validate :slug_not_changed
   before_create :set_slug
 
