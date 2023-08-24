@@ -62,6 +62,8 @@ gem "sqlite3", "~> 1.4", group: [:development, :test]
 
 gem "pg", group: [:production]
 
+gem "uglifier"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
